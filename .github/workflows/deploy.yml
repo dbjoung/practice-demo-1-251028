@@ -8,6 +8,9 @@ on:
       - 'README.md'
     branches:
       - 'main'
+permissions:
+  contents: write        # 태그와 릴리스 생성을 위해
+  packages: write        # GHCR에 푸시하기 위해
 jobs:
   makeTagAndRelease:
     runs-on: ubuntu-latest
