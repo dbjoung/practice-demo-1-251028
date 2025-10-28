@@ -15,10 +15,10 @@ RUN gradle dependencies --no-daemon
 COPY src src
 
 # 애플리케이션 빌드
-RUN gradle build --no-daemon
+RUN ./gradlew build --no-daemon
 
 # 두 번째 스테이지: 실행 스테이지
-FROM container-registry.oracle.com/graalvm/jdk:23
+FROM ghcr.io/graalvm/jdk-community:21
 
 # 작업 디렉토리 설정
 WORKDIR /app
